@@ -2,6 +2,9 @@
 #include <MainGameState.hpp>
 #include <memory>
 #include <chrono>
+extern "C" {
+    #include <raylib.h>
+}
 
 int main()
 { 
@@ -10,6 +13,11 @@ int main()
     StateMachine state_machine = StateMachine();
     state_machine.add_state(std::make_unique<MainGameState>(), false);
     state_machine.handle_state_changes(delta_time);
+
+
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+    InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
     while (!state_machine.is_game_ending())
     {

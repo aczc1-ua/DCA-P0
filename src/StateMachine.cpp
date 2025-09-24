@@ -1,5 +1,8 @@
 #include <StateMachine.hpp>
 #include <iostream>
+extern "C" {
+    #include <raylib.h>
+}
 
 StateMachine::StateMachine()
 {

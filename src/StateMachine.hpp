@@ -4,6 +4,9 @@
 #include <memory>
 #include <unordered_map>
 #include <string>
+extern "C" {
+    #include <raylib.h>
+}
 
 class StateMachine 
 {
